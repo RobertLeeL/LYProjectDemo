@@ -15,6 +15,8 @@
 		0776B9EA21C29577006CB00E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776B9E921C29577006CB00E /* main.m */; };
 		0776B9F421C29578006CB00E /* LYProjectDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776B9F321C29578006CB00E /* LYProjectDemoTests.m */; };
 		0776B9FF21C29578006CB00E /* LYProjectDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776B9FE21C29578006CB00E /* LYProjectDemoUITests.m */; };
+		0776BA1321CF5272006CB00E /* LYRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776BA1221CF5272006CB00E /* LYRootViewController.m */; };
+		DAE364E44888A5D5DFBA24B2 /* libPods-LYProjectDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5BF62CF71E142000E5A373F /* libPods-LYProjectDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,11 @@
 		0776B9FA21C29578006CB00E /* LYProjectDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LYProjectDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0776B9FE21C29578006CB00E /* LYProjectDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYProjectDemoUITests.m; sourceTree = "<group>"; };
 		0776BA0021C29578006CB00E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0776BA1121CF5272006CB00E /* LYRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYRootViewController.h; sourceTree = "<group>"; };
+		0776BA1221CF5272006CB00E /* LYRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYRootViewController.m; sourceTree = "<group>"; };
+		8D8C771D4CFFDF8CE549867C /* Pods-LYProjectDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYProjectDemo.debug.xcconfig"; path = "Target Support Files/Pods-LYProjectDemo/Pods-LYProjectDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		9E7762372A953AD24F0399D5 /* Pods-LYProjectDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYProjectDemo.release.xcconfig"; path = "Target Support Files/Pods-LYProjectDemo/Pods-LYProjectDemo.release.xcconfig"; sourceTree = "<group>"; };
+		E5BF62CF71E142000E5A373F /* libPods-LYProjectDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LYProjectDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAE364E44888A5D5DFBA24B2 /* libPods-LYProjectDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +93,8 @@
 				0776B9F221C29578006CB00E /* LYProjectDemoTests */,
 				0776B9FD21C29578006CB00E /* LYProjectDemoUITests */,
 				0776B9D821C29576006CB00E /* Products */,
+				48C0814B972F51BF4D12947F /* Pods */,
+				68A91DFD2BB43991AAA7E4F7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +111,8 @@
 		0776B9D921C29576006CB00E /* LYProjectDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0776BA1921CF5315006CB00E /* Business */,
+				0776BA1021CF5251006CB00E /* ROOT */,
 				0776B9DA21C29576006CB00E /* AppDelegate.h */,
 				0776B9DB21C29576006CB00E /* AppDelegate.m */,
 				0776B9DD21C29576006CB00E /* ViewController.h */,
@@ -132,6 +144,79 @@
 			path = LYProjectDemoUITests;
 			sourceTree = "<group>";
 		};
+		0776BA1021CF5251006CB00E /* ROOT */ = {
+			isa = PBXGroup;
+			children = (
+				0776BA1121CF5272006CB00E /* LYRootViewController.h */,
+				0776BA1221CF5272006CB00E /* LYRootViewController.m */,
+			);
+			path = ROOT;
+			sourceTree = "<group>";
+		};
+		0776BA1421CF52B2006CB00E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0776BA1521CF52CB006CB00E /* List */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		0776BA1621CF52E6006CB00E /* APP */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APP;
+			sourceTree = "<group>";
+		};
+		0776BA1721CF52FA006CB00E /* Browser */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Browser;
+			sourceTree = "<group>";
+		};
+		0776BA1821CF530D006CB00E /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		0776BA1921CF5315006CB00E /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				0776BA1421CF52B2006CB00E /* Home */,
+				0776BA1521CF52CB006CB00E /* List */,
+				0776BA1621CF52E6006CB00E /* APP */,
+				0776BA1721CF52FA006CB00E /* Browser */,
+				0776BA1821CF530D006CB00E /* Mine */,
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
+		48C0814B972F51BF4D12947F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8D8C771D4CFFDF8CE549867C /* Pods-LYProjectDemo.debug.xcconfig */,
+				9E7762372A953AD24F0399D5 /* Pods-LYProjectDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		68A91DFD2BB43991AAA7E4F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E5BF62CF71E142000E5A373F /* libPods-LYProjectDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,6 +224,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0776BA0321C29578006CB00E /* Build configuration list for PBXNativeTarget "LYProjectDemo" */;
 			buildPhases = (
+				C505B519133A80BCBB25168A /* [CP] Check Pods Manifest.lock */,
 				0776B9D321C29576006CB00E /* Sources */,
 				0776B9D421C29576006CB00E /* Frameworks */,
 				0776B9D521C29576006CB00E /* Resources */,
@@ -257,12 +343,38 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C505B519133A80BCBB25168A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LYProjectDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0776B9D321C29576006CB00E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0776B9DF21C29576006CB00E /* ViewController.m in Sources */,
+				0776BA1321CF5272006CB00E /* LYRootViewController.m in Sources */,
 				0776B9EA21C29577006CB00E /* main.m in Sources */,
 				0776B9DC21C29576006CB00E /* AppDelegate.m in Sources */,
 			);
@@ -433,6 +545,7 @@
 		};
 		0776BA0421C29578006CB00E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D8C771D4CFFDF8CE549867C /* Pods-LYProjectDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -450,6 +563,7 @@
 		};
 		0776BA0521C29578006CB00E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E7762372A953AD24F0399D5 /* Pods-LYProjectDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
