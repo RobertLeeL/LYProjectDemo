@@ -1,43 +1,36 @@
 //
-//  LYHomeViewController.m
+//  NetworkTableViewController.m
 //  LYProjectDemo
 //
-//  Created by 李龙跃 on 2018/12/24.
+//  Created by 李龙跃 on 2018/12/25.
 //  Copyright © 2018 Longyue Li. All rights reserved.
 //
 
-#import "LYHomeViewController.h"
 #import "NetworkTableViewController.h"
 
-@interface LYHomeViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface NetworkTableViewController ()
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
 
-@property (nonatomic, strong) UITableView *tableView;
-
 @end
 
-@implementation LYHomeViewController
+@implementation NetworkTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"首页";
+    
+    self.title = @"网络编程";
     
     self.dataArray = [[NSMutableArray alloc] init];
     [self loadDataArray];
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    [self.view addSubview:self.tableView];
-    
 }
 
 - (void)loadDataArray {
-    [self.dataArray addObject:@"网络编程"];
+    [self.dataArray addObject:@"NSURLConnection"];
 }
+
+#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -47,12 +40,8 @@
     return self.dataArray.count;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 50.f;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *identifier = @"homecell";
+    static NSString *identifier = @"netWorkcell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
@@ -64,7 +53,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.row) {
         case 0: {
-            [self.navigationController pushViewController:[NetworkTableViewController new] animated:YES];
+            NSLog(@"123");
         }
             break;
             
@@ -72,6 +61,5 @@
             break;
     }
 }
-
 
 @end

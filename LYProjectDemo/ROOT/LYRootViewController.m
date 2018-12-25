@@ -78,7 +78,7 @@
     
     LYMineViewController *fivethViewController = [[LYMineViewController alloc] init];
     UIViewController *fifthNavigationController = [[LYNavigationController alloc]
-                                                    initWithRootViewController:fourthViewController];
+                                                    initWithRootViewController:fivethViewController];
     
     NSArray *viewControllers = @[
                                  firstNavigationController,
@@ -91,7 +91,7 @@
 }
 
 - (NSArray *)tabBarItemsAttributesForController {
-    CGFloat firstXOffset = -12/2;
+    CGFloat firstXOffset = 0;
     NSDictionary *firstTabBarItemsAttributes = @{
                                                  CYLTabBarItemTitle : @"首页",
                                                  CYLTabBarItemImage : @"home_normal",  /* NSString and UIImage are supported*/
@@ -99,7 +99,7 @@
                                                  CYLTabBarItemTitlePositionAdjustment: [NSValue valueWithUIOffset:UIOffsetMake(firstXOffset, -3.5)]
                                                  //第一位 右大，下大
                                                  };
-    CGFloat secondXOffset = (-25+2)/2;
+    CGFloat secondXOffset = 0;
     NSDictionary *secondTabBarItemsAttributes = @{
                                                   CYLTabBarItemTitle : @"列表",
                                                   CYLTabBarItemImage : @"list_normal",

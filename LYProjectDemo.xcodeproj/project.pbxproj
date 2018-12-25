@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		072DC8EF21D2771E00BED644 /* NetworkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 072DC8EE21D2771E00BED644 /* NetworkTableViewController.m */; };
 		0776B9DC21C29576006CB00E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776B9DB21C29576006CB00E /* AppDelegate.m */; };
 		0776B9DF21C29576006CB00E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776B9DE21C29576006CB00E /* ViewController.m */; };
 		0776B9E221C29576006CB00E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0776B9E021C29576006CB00E /* Main.storyboard */; };
@@ -42,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		072DC8ED21D2771E00BED644 /* NetworkTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkTableViewController.h; sourceTree = "<group>"; };
+		072DC8EE21D2771E00BED644 /* NetworkTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkTableViewController.m; sourceTree = "<group>"; };
 		0776B9D721C29576006CB00E /* LYProjectDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYProjectDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0776B9DA21C29576006CB00E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0776B9DB21C29576006CB00E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -173,6 +176,8 @@
 			children = (
 				0776BA1E21D12F3F006CB00E /* LYHomeViewController.h */,
 				0776BA1F21D12F3F006CB00E /* LYHomeViewController.m */,
+				072DC8ED21D2771E00BED644 /* NetworkTableViewController.h */,
+				072DC8EE21D2771E00BED644 /* NetworkTableViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -402,6 +407,7 @@
 				0776BA2C21D12FF0006CB00E /* LYMineViewController.m in Sources */,
 				0776B9DF21C29576006CB00E /* ViewController.m in Sources */,
 				0776BA2621D12F85006CB00E /* LYAppViewController.m in Sources */,
+				072DC8EF21D2771E00BED644 /* NetworkTableViewController.m in Sources */,
 				0776BA1321CF5272006CB00E /* LYRootViewController.m in Sources */,
 				0776B9EA21C29577006CB00E /* main.m in Sources */,
 				0776B9DC21C29576006CB00E /* AppDelegate.m in Sources */,
