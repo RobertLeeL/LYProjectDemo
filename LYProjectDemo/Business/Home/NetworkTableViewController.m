@@ -95,6 +95,19 @@
             }];
         }
             break;
+        case 3: {
+            //实现简单NSURLSession会话，方法是异步执行
+            NSURL *url = [NSURL URLWithString:@"https://www.tking.cn/showapi/mobile/pub/site/1002/active_show?isSupportSession=1&length=10&locationCityOID=1101&offset=0&seq=desc&siteCityOID=1101&sorting=weight&src=ios&type=6&ver=4.1.0"];
+            NSURLRequest *request = [NSURLRequest requestWithURL:url];
+            NSURLSession *session = [NSURLSession sharedSession];
+            NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+                NSLog(@"%@",dict);
+                NSLog(@"%@",[NSThread currentThread]);
+            }];
+            [task resume];
+        }
+            break;
         default:
             break;
     }
