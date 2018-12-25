@@ -80,7 +80,8 @@
             NSError *error = nil;
             NSURLResponse *response = nil;
             NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-            NSLog(@"%@",data);
+            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+            NSLog(@"%@",dict);
         }
             break;
         case 2: {
@@ -88,7 +89,8 @@
             NSURL *url = [NSURL URLWithString:@"https://www.tking.cn/showapi/mobile/pub/site/1002/active_show?isSupportSession=1&length=10&locationCityOID=1101&offset=0&seq=desc&siteCityOID=1101&sorting=weight&src=ios&type=6&ver=4.1.0"];
             NSURLRequest *request = [NSURLRequest requestWithURL:url];
             [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
-                NSLog(@"%@",data);
+                NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+                NSLog(@"%@",dict);
                 NSLog(@"%@",[NSThread currentThread]);
             }];
         }
@@ -106,8 +108,8 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    //等我的tools开发完成 再data转json
-    NSLog(@"%@",data);
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+    NSLog(@"%@",dict);
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
