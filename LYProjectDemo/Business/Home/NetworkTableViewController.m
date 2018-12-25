@@ -31,7 +31,10 @@
     [self.dataArray addObject:@"NSURLConnection 同步方法"];
     [self.dataArray addObject:@"NSURLConnection 异步方法"];
     
-    [self.dataArray addObject:@"NSURLSession"];
+    [self.dataArray addObject:@"NSURLSession 简单会话"];
+    [self.dataArray addObject:@"NSURLSession 默认会话"];
+    [self.dataArray addObject:@"NSURLSession 短暂会话"];
+    [self.dataArray addObject:@"NSURLSession 后台会话"];
 }
 
 #pragma mark - Table view data source
@@ -100,6 +103,39 @@
             NSURL *url = [NSURL URLWithString:@"https://www.tking.cn/showapi/mobile/pub/site/1002/active_show?isSupportSession=1&length=10&locationCityOID=1101&offset=0&seq=desc&siteCityOID=1101&sorting=weight&src=ios&type=6&ver=4.1.0"];
             NSURLRequest *request = [NSURLRequest requestWithURL:url];
             NSURLSession *session = [NSURLSession sharedSession];
+            NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+                NSLog(@"%@",dict);
+                NSLog(@"%@",[NSThread currentThread]);
+            }];
+            [task resume];
+        }
+            break;
+        case 4: {
+            //实现默认会话
+            NSURL *url = [NSURL URLWithString:@"https://www.tking.cn/showapi/mobile/pub/site/1002/active_show?isSupportSession=1&length=10&locationCityOID=1101&offset=0&seq=desc&siteCityOID=1101&sorting=weight&src=ios&type=6&ver=4.1.0"];
+            NSURLRequest *request = [NSURLRequest requestWithURL:url];
+            //第一种初始化方法
+//            NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+            //第二种初始化方法 可以觉得是否实现代理 nil为不实现 queue:主队列中实现
+            NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+            NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+                NSLog(@"%@",dict);
+                NSLog(@"%@",[NSThread currentThread]);
+            }];
+            [task resume];
+            
+        }
+            break;
+        case 5: {
+            //实现短暂会话 基本和默认会话使用相同 区别没研究
+            NSURL *url = [NSURL URLWithString:@"https://www.tking.cn/showapi/mobile/pub/site/1002/active_show?isSupportSession=1&length=10&locationCityOID=1101&offset=0&seq=desc&siteCityOID=1101&sorting=weight&src=ios&type=6&ver=4.1.0"];
+            NSURLRequest *request = [NSURLRequest requestWithURL:url];
+            //第一种初始化方法
+                        NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+            //第二种初始化方法 可以觉得是否实现代理 nil为不实现 queue:主队列中实现
+//            NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration ephemeralSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
             NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                 NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
                 NSLog(@"%@",dict);
