@@ -16,6 +16,11 @@
 		0776B9F421C29578006CB00E /* LYProjectDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776B9F321C29578006CB00E /* LYProjectDemoTests.m */; };
 		0776B9FF21C29578006CB00E /* LYProjectDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776B9FE21C29578006CB00E /* LYProjectDemoUITests.m */; };
 		0776BA1321CF5272006CB00E /* LYRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776BA1221CF5272006CB00E /* LYRootViewController.m */; };
+		0776BA2021D12F3F006CB00E /* LYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776BA1F21D12F3F006CB00E /* LYHomeViewController.m */; };
+		0776BA2321D12F72006CB00E /* LYListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776BA2221D12F72006CB00E /* LYListViewController.m */; };
+		0776BA2621D12F85006CB00E /* LYAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776BA2521D12F85006CB00E /* LYAppViewController.m */; };
+		0776BA2921D12FA1006CB00E /* LYBrowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776BA2821D12FA1006CB00E /* LYBrowerViewController.m */; };
+		0776BA2C21D12FF0006CB00E /* LYMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776BA2B21D12FF0006CB00E /* LYMineViewController.m */; };
 		DAE364E44888A5D5DFBA24B2 /* libPods-LYProjectDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5BF62CF71E142000E5A373F /* libPods-LYProjectDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +60,16 @@
 		0776BA0021C29578006CB00E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0776BA1121CF5272006CB00E /* LYRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYRootViewController.h; sourceTree = "<group>"; };
 		0776BA1221CF5272006CB00E /* LYRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYRootViewController.m; sourceTree = "<group>"; };
+		0776BA1E21D12F3F006CB00E /* LYHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYHomeViewController.h; sourceTree = "<group>"; };
+		0776BA1F21D12F3F006CB00E /* LYHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYHomeViewController.m; sourceTree = "<group>"; };
+		0776BA2121D12F72006CB00E /* LYListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYListViewController.h; sourceTree = "<group>"; };
+		0776BA2221D12F72006CB00E /* LYListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYListViewController.m; sourceTree = "<group>"; };
+		0776BA2421D12F85006CB00E /* LYAppViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYAppViewController.h; sourceTree = "<group>"; };
+		0776BA2521D12F85006CB00E /* LYAppViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYAppViewController.m; sourceTree = "<group>"; };
+		0776BA2721D12FA1006CB00E /* LYBrowerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYBrowerViewController.h; sourceTree = "<group>"; };
+		0776BA2821D12FA1006CB00E /* LYBrowerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYBrowerViewController.m; sourceTree = "<group>"; };
+		0776BA2A21D12FF0006CB00E /* LYMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYMineViewController.h; sourceTree = "<group>"; };
+		0776BA2B21D12FF0006CB00E /* LYMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYMineViewController.m; sourceTree = "<group>"; };
 		8D8C771D4CFFDF8CE549867C /* Pods-LYProjectDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYProjectDemo.debug.xcconfig"; path = "Target Support Files/Pods-LYProjectDemo/Pods-LYProjectDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		9E7762372A953AD24F0399D5 /* Pods-LYProjectDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYProjectDemo.release.xcconfig"; path = "Target Support Files/Pods-LYProjectDemo/Pods-LYProjectDemo.release.xcconfig"; sourceTree = "<group>"; };
 		E5BF62CF71E142000E5A373F /* libPods-LYProjectDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LYProjectDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +171,8 @@
 		0776BA1421CF52B2006CB00E /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0776BA1E21D12F3F006CB00E /* LYHomeViewController.h */,
+				0776BA1F21D12F3F006CB00E /* LYHomeViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -163,6 +180,8 @@
 		0776BA1521CF52CB006CB00E /* List */ = {
 			isa = PBXGroup;
 			children = (
+				0776BA2121D12F72006CB00E /* LYListViewController.h */,
+				0776BA2221D12F72006CB00E /* LYListViewController.m */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -170,6 +189,8 @@
 		0776BA1621CF52E6006CB00E /* APP */ = {
 			isa = PBXGroup;
 			children = (
+				0776BA2421D12F85006CB00E /* LYAppViewController.h */,
+				0776BA2521D12F85006CB00E /* LYAppViewController.m */,
 			);
 			path = APP;
 			sourceTree = "<group>";
@@ -177,6 +198,8 @@
 		0776BA1721CF52FA006CB00E /* Browser */ = {
 			isa = PBXGroup;
 			children = (
+				0776BA2721D12FA1006CB00E /* LYBrowerViewController.h */,
+				0776BA2821D12FA1006CB00E /* LYBrowerViewController.m */,
 			);
 			path = Browser;
 			sourceTree = "<group>";
@@ -184,6 +207,8 @@
 		0776BA1821CF530D006CB00E /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				0776BA2A21D12FF0006CB00E /* LYMineViewController.h */,
+				0776BA2B21D12FF0006CB00E /* LYMineViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -373,10 +398,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0776BA2921D12FA1006CB00E /* LYBrowerViewController.m in Sources */,
+				0776BA2C21D12FF0006CB00E /* LYMineViewController.m in Sources */,
 				0776B9DF21C29576006CB00E /* ViewController.m in Sources */,
+				0776BA2621D12F85006CB00E /* LYAppViewController.m in Sources */,
 				0776BA1321CF5272006CB00E /* LYRootViewController.m in Sources */,
 				0776B9EA21C29577006CB00E /* main.m in Sources */,
 				0776B9DC21C29576006CB00E /* AppDelegate.m in Sources */,
+				0776BA2021D12F3F006CB00E /* LYHomeViewController.m in Sources */,
+				0776BA2321D12F72006CB00E /* LYListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

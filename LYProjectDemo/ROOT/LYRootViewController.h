@@ -10,6 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface LYNavigationController : UINavigationController
+
+@end
+
+
 @interface LYRootViewController : CYLTabBarController
 
 @end
