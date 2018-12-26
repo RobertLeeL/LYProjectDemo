@@ -8,9 +8,12 @@
 
 #import "NetworkTableViewController.h"
 
-@interface NetworkTableViewController ()<NSURLConnectionDelegate,NSURLConnectionDataDelegate,NSURLConnectionDownloadDelegate>
+@interface NetworkTableViewController ()<NSURLConnectionDelegate,NSURLConnectionDataDelegate,NSURLConnectionDownloadDelegate,NSURLSessionDelegate,NSURLSessionDataDelegate,NSURLSessionTaskDelegate,NSURLSessionDownloadDelegate>
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
+
+
+@property (nonatomic, strong) NSURLSession *session;
 
 @end
 
@@ -24,6 +27,12 @@
     self.dataArray = [[NSMutableArray alloc] init];
     [self loadDataArray];
     
+    
+    
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(applicationDidEnterBackground:)
+//                                                 name:UIApplicationDidEnterBackgroundNotification
+//                                               object:nil];
 }
 
 - (void)loadDataArray {
@@ -144,10 +153,16 @@
             [task resume];
         }
             break;
+        case 6: {
+            //实现后台会话
+            //TO DO:还不是特别懂，后面再研究
+        }
+            break;
         default:
             break;
     }
 }
+
 
 
 #pragma mark -NSURLConnectionDelegate
@@ -164,5 +179,9 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     NSLog(@"请求完成~");
 }
+
+
+#pragma mark - NSURLSessionDelegate
+
 
 @end

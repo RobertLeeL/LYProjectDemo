@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "LYRootViewController.h"
 
-@interface AppDelegate ()<UITabBarControllerDelegate, CYLTabBarControllerDelegate>
+@interface AppDelegate ()<UITabBarControllerDelegate, CYLTabBarControllerDelegate,NSURLSessionDelegate>
 @property (nonatomic, strong) LYRootViewController *tabBarController;
 @end
 
@@ -191,5 +191,29 @@
         } completion:nil];
     });
 }
+
+
+
+//NSURLSession后台下载
+
+//- (void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)(void))completionHandler {
+//    // 创建配置对象
+//    NSURLSessionConfiguration *config = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:identifier];
+//
+//    // 根据配置对象创建session
+//    NSURLSession *session = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:[NSOperationQueue new]];
+//
+//    NSLog(@"session被重新创建");
+//
+//
+//}
+//
+//- (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession *)session {
+//    NSLog(@"所有后台任务已经完成");
+//
+//    if (session.configuration.identifier) {
+//        // 执行实现保存的后台session回调
+//    }
+//}
 
 @end
