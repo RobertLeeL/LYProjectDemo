@@ -161,12 +161,13 @@
         }
             break;
         case 7: {
-            //NSURLSessionDataDelegate
+            //NSURLSessionDelegate
             NSURL *url = [NSURL URLWithString:@"https://www.tking.cn/showapi/mobile/pub/site/1002/active_show?isSupportSession=1&length=10&locationCityOID=1101&offset=0&seq=desc&siteCityOID=1101&sorting=weight&src=ios&type=6&ver=4.1.0"];
             NSURLRequest *request = [NSURLRequest requestWithURL:url];
             //第一种初始化方法
             NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[NSOperationQueue mainQueue]];
-            NSURLSessionDataTask *task = [session dataTaskWithRequest:request];
+//            NSURLSessionDataTask *task = [session dataTaskWithRequest:request];
+            NSURLSessionDownloadTask *task = [session downloadTaskWithRequest:request];
             [task resume];
         }
             break;
@@ -197,6 +198,8 @@
 - (void)URLSession:(NSURLSession *)session didBecomeInvalidWithError:(nullable NSError *)error {
     
 }
+
+// 研究作用
 //- (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * _Nullable credential))completionHandler {
 //
 //}
@@ -258,7 +261,7 @@ willPerformHTTPRedirection:(NSHTTPURLResponse *)response
     NSLog(@"12345");
 }
 
-
+//研究作用
 //- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
 //didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
 // completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * _Nullable credential))completionHandler {
