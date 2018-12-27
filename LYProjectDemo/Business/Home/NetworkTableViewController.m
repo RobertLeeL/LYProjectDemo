@@ -7,6 +7,7 @@
 //
 
 #import "NetworkTableViewController.h"
+#import <AFNetworking.h>
 
 @interface NetworkTableViewController ()<NSURLConnectionDelegate,NSURLConnectionDataDelegate,NSURLConnectionDownloadDelegate,NSURLSessionDelegate,NSURLSessionDataDelegate,NSURLSessionTaskDelegate,NSURLSessionDownloadDelegate,NSURLSessionStreamDelegate>
 
@@ -46,6 +47,8 @@
     [self.dataArray addObject:@"NSURLSession 后台会话"];
     
     [self.dataArray addObject:@"NSURLSession NSURLSessionDownloadDelegate"];
+    
+    [self.dataArray addObject:@"AFNetworking"];
 }
 
 #pragma mark - Table view data source
@@ -171,6 +174,52 @@
             [task resume];
         }
             break;
+        case 8: {
+                AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+                //最大请求并发任务数
+                manager.operationQueue.maxConcurrentOperationCount = 5;
+                
+                // 请求格式
+                // AFHTTPRequestSerializer            二进制格式
+                // AFJSONRequestSerializer            JSON
+                // AFPropertyListRequestSerializer    PList(是一种特殊的XML,解析起来相对容易)
+                
+                manager.requestSerializer = [AFHTTPRequestSerializer serializer]; // 上传普通格式
+                
+                // 超时时间
+                manager.requestSerializer.timeoutInterval = 30.0f;
+                // 设置请求头
+                [manager.requestSerializer setValue:@"gzip" forHTTPHeaderField:@"Content-Encoding"];
+                // 设置接收的Content-Type
+                manager.responseSerializer.acceptableContentTypes = [[NSSet alloc] initWithObjects:@"application/xml", @"text/xml",@"text/html", @"application/json",@"text/plain",nil];
+                
+                // 返回格式
+                // AFHTTPResponseSerializer           二进制格式
+                // AFJSONResponseSerializer           JSON
+                // AFXMLParserResponseSerializer      XML,只能返回XMLParser,还需要自己通过代理方法解析
+                // AFXMLDocumentResponseSerializer (Mac OS X)
+                // AFPropertyListResponseSerializer   PList
+                // AFImageResponseSerializer          Image
+                // AFCompoundResponseSerializer       组合
+                
+                manager.responseSerializer = [AFJSONResponseSerializer serializer];//返回格式 JSON
+                //设置返回C的ontent-type
+                manager.responseSerializer.acceptableContentTypes=[[NSSet alloc] initWithObjects:@"application/xml", @"text/xml",@"text/html", @"application/json",@"text/plain",nil];
+                
+                //创建请求地址
+                NSString *url=@"https://www.tking.cn/showapi/mobile/pub/site/1002/active_show?isSupportSession=1&length=10&locationCityOID=1101&offset=0&seq=desc&siteCityOID=1101&sorting=weight&src=ios&type=6&ver=4.1.0";
+                //AFN管理者调用get请求方法
+                [manager GET:url parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+                    //返回请求返回进度
+                    NSLog(@"downloadProgress-->%@",downloadProgress);
+                } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                    //请求成功返回数据 根据responseSerializer 返回不同的数据格式
+                    NSLog(@"responseObject-->%@",responseObject);
+                } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                    //请求失败
+                    NSLog(@"error-->%@",error);
+                }];
+        }
         default:
             break;
     }
