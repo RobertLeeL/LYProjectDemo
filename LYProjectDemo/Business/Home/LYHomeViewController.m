@@ -8,6 +8,7 @@
 
 #import "LYHomeViewController.h"
 #import "NetworkTableViewController.h"
+#import "ThreadTableViewController.h"
 
 @interface LYHomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -37,6 +38,7 @@
 
 - (void)loadDataArray {
     [self.dataArray addObject:@"网络编程"];
+    [self.dataArray addObject:@"多线程开发"];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -67,7 +69,10 @@
             [self.navigationController pushViewController:[NetworkTableViewController new] animated:YES];
         }
             break;
-            
+        case 1: {
+            [self.navigationController pushViewController:[ThreadTableViewController new] animated:YES];
+        }
+            break;
         default:
             break;
     }
