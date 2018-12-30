@@ -63,32 +63,80 @@
             dispatch_queue_t mainQueue = dispatch_get_main_queue();
             
             //提交任务
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                //
-            });
+//            dispatch_sync(dispatch_get_main_queue(), ^{
+//                //
+//            });
             
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
-                //code
-                
-                dispatch_async(dispatch_get_main_queue(), ^(void) {
-                    //code
-                });
-            });
+//            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
+//                //code
+//
+//                dispatch_async(dispatch_get_main_queue(), ^(void) {
+//                    //code
+//                });
+//            });
             
             //单次执行方法
-            static dispatch_once_t onceToken;
-            dispatch_once(&onceToken, ^{
-                //code
-            });
+//            static dispatch_once_t onceToken;
+//            dispatch_once(&onceToken, ^{
+//                //code
+//            });
             
             //多次执行方法
 //            dispatch_apply(5, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(size_t) {
 //                //
 //            });
             
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(<#delayInSeconds#> * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                //
+//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                //
+//            });
+//
+            
+//            dispatch_group_t group = dispatch_group_create();
+//
+//            for (int i = 0; i < 6; i++) {
+//                dispatch_group_enter(group);
+//
+//                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//                    NSLog(@"%d",i);
+//                });
+//
+//                dispatch_group_leave(group);
+//            }
+//
+//            dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+//                NSLog(@"end");
+//            });
+//
+            dispatch_group_t group = dispatch_group_create();
+            
+            dispatch_group_enter(group);
+                
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                NSLog(@"0");
             });
+            
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                NSLog(@"1");
+            });
+            
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                NSLog(@"2");
+            });
+            
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                NSLog(@"3");
+            });
+            
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                NSLog(@"4");
+            });
+                
+            dispatch_group_leave(group);
+            
+            dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+                NSLog(@"end");
+            });
+            
             
             
         }
